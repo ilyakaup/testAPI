@@ -75,7 +75,7 @@ router.put("/api/article/:id", (req, res, next) => {
     console.log(data);                                                      // проверить ID на валидность
                                                                             // Использовать Prepared Statements
     db.run(
-        `UPDATE article set 
+        `UPDATE article set                                                 
            title = COALESCE(?,title),
            body = COALESCE(?,body)
            WHERE id = ?`,
@@ -90,6 +90,10 @@ router.put("/api/article/:id", (req, res, next) => {
                 message: "Успешно",
                 data: data
             });
+            /*
+                Если стереть заголовок или все содержимое статьи, то они так пустыми и запишутся,
+                что противоречит концепции создания статьи (метод POST), там это проверяется и возвращается код ошибки
+            */
     });
 });
 
