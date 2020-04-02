@@ -80,8 +80,10 @@ app.listen(HTTP_PORT, () => {
 
     8.  В методе создания статьи (POST) вместо кода 200 лучше вернуть 201 (Created).
 
-    9.  Обосновать наличие зависимостей lodash, md5, uuid в package.json
+    9.  Обосновать наличие зависимостей lodash, md5, uuid в package.json.
 
-    10. Занести файл БД db.sqlite в .gitignore     
+    10. Занести файл БД db.sqlite в .gitignore.   
+    
+    Остальные комментарии в файле router.js
 */
 
